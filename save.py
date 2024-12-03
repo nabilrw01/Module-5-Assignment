@@ -19,4 +19,7 @@ def save_contacts(contacts):
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         for contact in contacts:
-            writer.writerow(contact.__dict__)
+            writer.writerow({ 'Name': contact.name, 
+                             'Email': contact.email, 
+                             'Phone Number': contact.phone_number, 
+                             'Address': contact.address })
